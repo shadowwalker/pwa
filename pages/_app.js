@@ -8,6 +8,14 @@ export default function MyApp({ Component, pageProps }) {
     typeof window !== 'undefined' &&
     !!navigator.platform &&
     /iPhone/.test(navigator.platform)
+
+  React.useEffect(() => {
+    if (iOS) {
+      document
+        .querySelector('link[rel="manifest"]')
+        .setAttribute('rel', 'no-on-ios')
+    }
+  }, [])
   return (
     <>
       <Head>
@@ -20,8 +28,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Next.js PWA Example</title>
-        {/* Fix authentication issues in iOS */}
-        {!iOS && <link rel="manifest" href="/manifest.json" />}
+        <link rel="manifest" href="/manifest.json" />
         <link
           href="/favicon-16x16.png"
           rel="icon"
