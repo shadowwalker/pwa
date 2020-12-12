@@ -4,7 +4,10 @@ import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps }) {
   const { session } = pageProps
-
+  const iOS =
+    typeof window !== 'undefined' &&
+    !!navigator.platform &&
+    /iPhone/.test(navigator.platform)
   return (
     <>
       <Head>
@@ -17,6 +20,12 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Next.js PWA Example</title>
+        {/* Fix authentication issues in iOS */}
+        {iOS ? (
+          <link rel="no-on-ios" href="/manifest.json" />
+        ) : (
+          <link rel="manifest" href="/manifest.json" />
+        )}
         <link
           href="/favicon-16x16.png"
           rel="icon"

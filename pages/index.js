@@ -3,22 +3,13 @@ import Nav from '../components/nav'
 import Head from 'next/head'
 
 export default function Home() {
-  const iOS =
-    typeof window !== 'undefined' &&
-    !!navigator.platform &&
-    /iPhone/.test(navigator.platform)
   return (
     <>
       <Nav />
-      <Head>
-        {/* Fix authentication issues in iOS */}
-        {!iOS && <link rel="manifest" href="/manifest.json" />}
-      </Head>
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome to{' '}
-            <a href="https://nextjs.org">Next.js{iOS && ' in iOS'}!</a>
+            Welcome to <a href="https://nextjs.org">Next.js!</a>
           </h1>
 
           <p className={styles.description}>
