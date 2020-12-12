@@ -4,18 +4,6 @@ import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps }) {
   const { session } = pageProps
-  const iOS =
-    typeof window !== 'undefined' &&
-    !!navigator.platform &&
-    /iPhone/.test(navigator.platform)
-
-  React.useEffect(() => {
-    if (iOS) {
-      document
-        .querySelector('link[rel="manifest"]')
-        .setAttribute('rel', 'no-on-ios')
-    }
-  }, [])
   return (
     <>
       <Head>
