@@ -23,6 +23,7 @@ export default function MyApp({ Component, pageProps }) {
         <title>Next.js PWA Example</title>
         {/* Fix authentication issues in iOS */}
         {!iOS && <link rel="manifest" href="/manifest.json" />}
+        {/* <link rel="manifest" href="/manifest.json" />} */}
         <link
           href="/favicon-16x16.png"
           rel="icon"
@@ -35,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
           type="image/png"
           sizes="32x32"
         />
-        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Provider session={session}>
