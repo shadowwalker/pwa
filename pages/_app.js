@@ -22,11 +22,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="keywords" content="Keywords" />
         <title>Next.js PWA Example</title>
         {/* Fix authentication issues in iOS */}
-        {iOS ? (
-          <link rel="no-on-ios" href="/manifest.json" />
-        ) : (
-          <link rel="manifest" href="/manifest.json" />
-        )}
+        {!iOS && <link rel="manifest" href="/manifest.json" />}
         {/* <link rel="manifest" href="/manifest.json" /> */}
         <link
           href="/favicon-16x16.png"
