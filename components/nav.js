@@ -26,7 +26,7 @@ const Nav = () => {
               href={`/api/auth/signin`}
               onClick={(e) => {
                 e.preventDefault()
-                signin()
+                signin('google')
               }}
             >
               <button className={styles.signinButton}>Sign in</button>
