@@ -4,8 +4,7 @@ import '../styles/globals.css'
 
 export default function MyApp({ Component, pageProps }) {
   const { session } = pageProps
-  const isIOS =
-    typeof navigator !== 'undefined' && /iPhone/.test(navigator.platform)
+  // const isIOS = typeof navigator !== 'undefined' && /iPhone/.test(navigator.platform)
   return (
     <>
       <Head>
@@ -18,7 +17,8 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Next.js PWA Example</title>
-        <link rel={isIOS ? 'no-on-ios' : 'manifest'} href="/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel={isIOS ? 'no-on-ios' : 'manifest'} href="/manifest.json" /> */}
         <link
           href="/favicon-16x16.png"
           rel="icon"
