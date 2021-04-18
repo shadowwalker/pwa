@@ -8,10 +8,10 @@ const options = {
       clientSecret: process.env.NEXTAUTH_GOOGLE_SECRET,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  //secret: process.env.NEXTAUTH_SECRET,
   jwt: {
-    secret: process.env.NEXTAUTH_JWT_SECRET,
-    signingKey: process.env.NEXTAUTH_JWT_SIGNING_PRIVATE_KEY,
+    //secret: process.env.NEXTAUTH_JWT_SECRET,
+    //signingKey: process.env.NEXTAUTH_JWT_SIGNING_PRIVATE_KEY,
   },
   callbacks: {
     jwt: async (token, user, account, profile, isNewUser) => {
